@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production' ? '/mapleKit/' : '/',
+  base: process.env.DEPLOY_TARGET === 'github' ? '/mapleKit/' : '/',
 })

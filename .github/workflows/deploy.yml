@@ -24,7 +24,7 @@ jobs:
         run: npm ci # 使用 npm ci 安裝專案的相依套件
 
       - name: Build project
-        run: npm run build  # 使用 npm run build 來編譯專案
+        run: npm run build:github  # 指定為 GitHub Pages 建置
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4 # 使用 peaceiris/actions-gh-pages action 第三方工具來部署到 GitHub Pages
