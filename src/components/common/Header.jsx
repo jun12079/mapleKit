@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import destinyRitualFanIcon from "../../assets/images/Destiny_Ritual_Fan_icon.png";
 
 const routes = [
   { path: "/maintain-calculator", name: "創世武器" },
@@ -13,7 +14,7 @@ export default function Header() {
         <div className="container">
           <NavLink className="navbar-brand" to="/">
             <img
-              src="./src/assets/images/Destiny_Ritual_Fan_icon.png"
+              src={destinyRitualFanIcon}
               alt="Destiny_Ritual_Fan_icon"
               className="me-2"
               style={{ width: "32px", height: "32px" }}
