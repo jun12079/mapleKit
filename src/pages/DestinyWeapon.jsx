@@ -1,4 +1,10 @@
 import { useState } from "react";
+import weeklyBossClearCountResetTicketIcon from "../assets/images/Weekly_Boss_Clear_Count_Reset_Ticket_icon.png";
+import serenIcon from "../assets/images/boss/Seren_icon.png";
+import kalosIcon from "../assets/images/boss/Kalos_icon.png";
+import kalingIcon from "../assets/images/boss/Kaling_icon.png";
+import limboIcon from "../assets/images/boss/Limbo_icon.png";
+import baldrixIcon from "../assets/images/boss/Baldrix_icon.png";
 
 const bossData = {
   seren: {
@@ -43,6 +49,16 @@ const bossData = {
       hard: { name: '困難', energy: 420 }
     }
   }
+};
+
+const bossIcon = {
+  seren: serenIcon,
+  serenReset: serenIcon,
+  kalos: kalosIcon,
+  kalosReset: kalosIcon,
+  kaling: kalingIcon,
+  limbo: limboIcon,
+  baldrix: baldrixIcon
 };
 
 const stageEnergy = [2000, 2500, 3000];
@@ -172,10 +188,10 @@ export default function Calculator() {
                                   </div>
                                 </td>
                                 <td>
-                                  <img src={`./src/assets/images/boss/${origin}_icon.png`} alt={origin} />
+                                  <img src={bossIcon[origin]} alt={origin} />
                                   {(boss === "serenReset" || boss === "kalosReset") && (
                                     <img
-                                      src="./src/assets/images/Weekly_Boss_Clear_Count_Reset_Ticket_icon.png"
+                                      src={weeklyBossClearCountResetTicketIcon}
                                       alt="Weekly_Boss_Clear_Count_Reset_Ticket_icon"
                                     />
                                   )}
@@ -279,7 +295,7 @@ export default function Calculator() {
                         return (
                           <div className={`stage-marker stage-${i + 1}`} key={i} style={{ left: i !== 2 ? `${(stage / stageCumulative[2]) * 100}%` : '95%' }}>
                             <div className={`stage-circle ${isCompleted ? 'completed' : isActive ? 'active' : ''}`} id={`stage${i + 1}Circle`}>
-                              <img src={`./src/assets/images/boss/${Object.keys(bossData)[i]}_icon.png`} alt={`Stage ${i + 1}`} />
+                              <img src={bossIcon[Object.keys(bossData)[i]]} alt={`Stage ${i + 1}`} />
                             </div>
                             <div className={`stage-info ${isCompleted ? 'completed' : isActive ? 'active' : ''}`} id={`stage${i + 1}Info`}>
                               第{i + 1}階段<br />
@@ -330,7 +346,7 @@ export default function Calculator() {
                         backdropFilter: "blur(5px)",
                       }}
                     >
-                      <h3 className="text-success fw-bold">命運武器已解放！</h3>
+                      <h3 className="text-success fw-bold">已解放！</h3>
                     </div>
                   )}
 

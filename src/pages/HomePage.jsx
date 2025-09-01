@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import destinyRitualFanIcon from "../assets/images/Destiny_Ritual_Fan_icon.png";
 
 export default function Homepage() {
   return (
@@ -15,7 +16,7 @@ export default function Homepage() {
             <div className="card border-0 shadow">
               <div className="card-body p-4 p-md-5">
                 <div className="d-flex align-items-center mb-2">
-                  <img src="./src/assets/images/Destiny_Ritual_Fan_icon.png" alt="Destiny_Ritual_Fan_icon"
+                  <img src={destinyRitualFanIcon} alt="Destiny_Ritual_Fan_icon"
                     style={{ width: "32px", height: "32px", marginRight: "8px" }} />
                   <p className="h5 fw-bold mb-1" style={{ marginBottom: 0 }}>命運武器進度</p>
                 </div>
