@@ -1,0 +1,537 @@
+// 基礎樣式
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  background-color: $bg-primary;
+  color: $text-primary;
+  line-height: 1.6;
+}
+
+// 頁面標題
+.page-title {
+  font-size: 2rem;
+  color: $text-primary;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+}
+
+// 卡片組件
+.card-clean {
+  background: $bg-card;
+  border: 1px solid $border;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.card-header-clean {
+  background: $primary;
+  color: white;
+  padding: 1.25rem 1.5rem;
+  border: none;
+}
+
+.card-title-clean {
+  font-size: 1.125rem;
+}
+
+.card-body-clean {
+  padding: 1.5rem;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
+}
+
+// 表單控制項
+.form-control,
+.form-select {
+  &:focus {
+    outline: none;
+    border-color: $primary;
+    box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.08);
+  }
+}
+
+// BOSS 表格
+.boss-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid $border;
+
+  th {
+    background: #f8fafc;
+    color: $text-primary;
+    font-weight: 600;
+    font-size: 0.875rem;
+    padding: 1rem 0.75rem;
+    text-align: center;
+    border-bottom: 2px solid $border;
+    position: relative;
+
+    @media (max-width: 768px) {
+      padding: 0.75rem 0.5rem;
+      font-size: 0.8125rem;
+    }
+  }
+}
+
+.boss-row {
+  border-bottom: 1px solid $border-light;
+  transition: background-color 0.15s ease;
+
+  &:hover:not(.disabled) {
+    background: #fafbfc;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &.disabled {
+    opacity: 0.5;
+    background: #f8f9fa;
+  }
+
+  td {
+    padding: 1.125rem 0.75rem;
+    text-align: center;
+    vertical-align: middle;
+
+    @media (max-width: 768px) {
+      padding: 0.75rem 0.5rem;
+      font-size: 0.8125rem;
+    }
+
+    img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+      vertical-align: middle;
+      margin: 0 2px;
+    }
+  }
+}
+
+// 表單檢查框
+.form-check-input {
+  width: 20px;
+  height: 20px;
+  border: 2px solid $border;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.15s ease;
+
+  &:checked {
+    background-color: $primary;
+    border-color: $primary;
+  }
+
+  &:hover {
+    border-color: $primary;
+  }
+}
+
+// 能量徽章
+.energy-badge {
+  display: inline-block;
+  padding: 0.375rem 1rem;
+  background: $primary;
+  color: white;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  min-width: 60px;
+  box-shadow: 0 1px 3px rgba(44, 62, 80, 0.2);
+}
+
+// 總能量顯示
+.total-energy {
+  background: linear-gradient(135deg, $primary 0%, $primary-light 100%);
+  color: white;
+  padding: 1.25rem 1.5rem;
+  border-radius: 10px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 2rem;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.15);
+}
+
+// 階段清單
+.stage-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  .stage-item {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid $border-light;
+    transition: background 0.2s;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &.completed {
+      background: #ecfdf5;
+      border-left: 4px solid $success;
+    }
+  }
+}
+
+.stage-left {
+  .stage-title {
+    font-size: 0.85rem;
+    color: $text-primary;
+  }
+
+  .stage-requirement {
+    font-size: 0.85rem;
+    color: $text-secondary;
+  }
+}
+
+.stage-right {
+  text-align: right;
+  font-size: 0.85rem;
+  color: $text-primary;
+
+  .finish-week {
+    color: $accent;
+  }
+}
+
+// 導航列
+.navbar-custom {
+  background: $primary;
+  box-shadow: 0 2px 12px rgba(44, 62, 80, 0.15);
+}
+
+/* 導覽連結hover線條動畫 */
+.nav-link-animated {
+  position: relative;
+  display: inline-block;
+  color: #ffffff;
+}
+
+.nav-link-animated::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #ffffff;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-link-animated:hover {
+  color: #ffffff;
+}
+
+.nav-link-animated:hover::before {
+  visibility: visible;
+  width: 100%;
+}
+
+.dropdown-toggle.nav-link-animated {
+  color: #ffffff;
+}
+
+.dropdown-toggle.nav-link-animated::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #ffffff;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.dropdown-toggle.nav-link-animated:hover {
+  color: #ffffff;
+}
+
+.dropdown-toggle.nav-link-animated:hover::before {
+  visibility: visible;
+  width: 100%;
+}
+
+/* 下拉選單樣式優化 */
+.dropdown-menu {
+  border: none;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  padding: 0.5rem 0;
+  margin-top: 0.5rem;
+  background-color: #ffffff;
+}
+
+.dropdown-item-animated {
+  position: relative;
+  display: block;
+  padding: 0.75rem 1.5rem;
+  color: $text-primary;
+  text-decoration: none;
+  background-color: transparent;
+  border: 0;
+}
+
+.dropdown-item-animated::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 2px;
+  left: 1.5rem;
+  background-color: #6c757d;
+  transition: width 0.3s ease-in-out;
+}
+
+.dropdown-item-animated:hover {
+  color: $primary;
+  background-color: #f8f9fa;
+}
+
+.dropdown-item-animated:hover::before {
+  width: calc(100% - 3rem);
+}
+
+/* 移除 active/focus 狀態的問題樣式 */
+.dropdown-item-animated:active,
+.dropdown-item-animated.active,
+.dropdown-item-animated:focus {
+  color: $primary;
+  background-color: #f8f9fa;
+  outline: none;
+}
+
+// 表格滾動
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+
+  table {
+    min-width: 600px;
+  }
+}
+
+// 進度條組件
+.progress-container {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.95));
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(44, 62, 80, 0.1);
+  backdrop-filter: blur(10px);
+  margin: 1.5rem 0;
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+  }
+}
+
+.progress-wrapper {
+  position: relative;
+  margin: 3rem 0 2rem 0;
+  background: $border-light;
+  border-radius: 25px;
+  height: 20px;
+  overflow: visible;
+}
+
+.progress-bar-custom {
+  height: 100%;
+  background: $primary;
+  border-radius: 25px;
+  transition: width 0.8s ease;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.2);
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 2s infinite;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.stage-marker {
+  position: absolute;
+  top: -55px;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+
+  &.stage-1 {
+    left: calc(2000 / 7500 * 100%);
+  }
+
+  &.stage-2 {
+    left: calc(4500 / 7500 * 100%);
+  }
+
+  &.stage-3 {
+    left: 95%;
+  }
+}
+
+.stage-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $border;
+  border: 3px solid white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+
+  @media (max-width: 768px) {
+    width: 32px;
+    height: 32px;
+  }
+
+  img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    border-radius: 50%;
+
+    @media (max-width: 768px) {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &.completed {
+    background: $success;
+    transform: scale(1.1);
+
+    &::after {
+      content: "✓";
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      position: absolute;
+    }
+
+    img {
+      display: none;
+    }
+  }
+
+  &.active {
+    background: $warning;
+    animation: pulse 2s infinite;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 4px 20px rgba(245, 158, 11, 0.6);
+  }
+}
+
+.stage-info {
+  margin-top: 0.5rem;
+  text-align: center;
+  font-size: 0.75rem;
+  color: $text-secondary;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  min-width: 80px;
+
+  @media (max-width: 768px) {
+    font-size: 0.7rem;
+    min-width: 70px;
+  }
+
+  &.completed {
+    color: $success;
+    font-weight: 600;
+  }
+
+  &.active {
+    color: $warning;
+    font-weight: 600;
+  }
+}
+
+// 進度文字與統計
+.progress-text {
+  text-align: center;
+  margin-top: 4rem;
+  color: $text-secondary;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.progress-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.7);
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid $border-light;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $primary;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: $text-secondary;
+  margin-top: 0.25rem;
+}
