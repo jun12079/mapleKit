@@ -12473,4 +12473,13 @@ body {
   font-size: 0.875rem;
   color: #64748b;
   margin-top: 0.25rem;
+}
+
+.hover-lift {
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
 }/*# sourceMappingURL=all.css.map */
