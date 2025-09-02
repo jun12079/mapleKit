@@ -13,7 +13,7 @@ export default function Homepage() {
       <div className="row justify-content-center mb-5">
         <div className="col-md-6 col-lg-4">
           <Link to="/destiny-weapon" className="text-decoration-none">
-            <div className="card border-0 shadow">
+            <div className="card border-0 shadow hover-lift">
               <div className="card-body p-4 p-md-5">
                 <div className="d-flex align-items-center mb-2">
                   <img src={destinyRitualFanIcon} alt="Destiny_Ritual_Fan_icon"

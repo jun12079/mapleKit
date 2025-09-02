@@ -58,9 +58,6 @@ export default function Header() {
               <li className="nav-item">
                 <NavLink className="nav-link nav-link-animated" to="#">使用說明</NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink className="nav-link nav-link-animated" to="#">關於我們</NavLink>
-              </li>
             </ul>
           </div>
         </div>
