@@ -12482,4 +12482,13 @@ body {
 
 .hover-lift:hover {
   transform: translateY(-4px);
+}
+
+.accordion-button::after {
+  display: none;
+}
+
+.accordion-button:hover {
+  background-color: #f8f9fa !important;
+  transform: translateY(-1px);
 }/*# sourceMappingURL=all.css.map */

@@ -4,6 +4,7 @@ import FrontLayout from "../layouts/FrontLayout";
 import Homepage from "../pages/HomePage";
 import DestinyWeapon from "../pages/DestinyWeapon";
 import NotFound from "../pages/NotFound";
+import FAQ from "../pages/FAQ";
 
 const router = createHashRouter([
   {
@@ -17,6 +18,10 @@ const router = createHashRouter([
       {
         path: 'destiny-weapon',
         element: <DestinyWeapon />,
+      },
+      {
+        path: 'faq',
+        element: <FAQ />,
       }
     ]
   },

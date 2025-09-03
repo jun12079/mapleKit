@@ -56,7 +56,7 @@ export default function Header() {
                 </ul>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link nav-link-animated" to="#">使用說明</NavLink>
+                <NavLink className="nav-link nav-link-animated" to="/faq">常見問題</NavLink>
               </li>
             </ul>
           </div>
