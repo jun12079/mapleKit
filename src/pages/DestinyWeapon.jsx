@@ -78,10 +78,9 @@ export default function Calculator() {
   });
 
   const updateBossConfig = (boss, field, value) => {
-    const newConfig = { ...bossConfig };
     if (field === 'difficulty') {
-      const testConfig = { ...newConfig };
-      testConfig[boss][field] = value;
+      const testConfig = { ...bossConfig };
+      testConfig[boss] = { ...testConfig[boss], [field]: value };
 
       if ((testConfig[boss].origin === 'seren' || testConfig[boss].origin === 'kalos') && !checkRules(testConfig[boss].origin, testConfig)) {
         alert(`${bossData[testConfig[boss].origin].name} 無法選擇兩場極限`);
@@ -89,7 +88,8 @@ export default function Calculator() {
       }
     }
 
-    newConfig[boss][field] = value;
+    const newConfig = { ...bossConfig };
+    newConfig[boss] = { ...newConfig[boss], [field]: value };
     setBossConfig(newConfig);
   };
 
