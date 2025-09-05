@@ -38,15 +38,15 @@ const bossData = {
     players: 3,
     difficulties: {
       normal: { name: '普通', energy: 120 },
-      hard: { name: '困難', energy: 300 }
+      hard: { name: '困難', energy: 360 }
     }
   },
   baldrix: {
     name: '巴德利斯',
     players: 3,
     difficulties: {
-      normal: { name: '普通', energy: 180 },
-      hard: { name: '困難', energy: 420 }
+      normal: { name: '普通', energy: 150 },
+      hard: { name: '困難', energy: 450 }
     }
   }
 };
@@ -65,7 +65,7 @@ const stageEnergy = [2000, 2500, 3000];
 const stageCumulative = [2000, 4500, 7500];
 
 export default function Calculator() {
-  const [startDate, setStartDate] = useState("2025-09-10");
+  const [startDate, setStartDate] = useState("2025-10-02");
   const [startEnergy, setStartEnergy] = useState(0);
   const [bossConfig, setBossConfig] = useState({
     seren: { players: 1, difficulty: "hard", origin: "seren", enabled: true },
