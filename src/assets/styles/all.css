@@ -12147,6 +12147,7 @@ body {
 .stage-list .stage-item.completed {
   background: #ecfdf5;
   border-left: 4px solid #10b981;
+  padding-left: 0.75rem;
 }
 
 .stage-left .stage-title {
@@ -12482,6 +12483,13 @@ body {
 
 .hover-lift:hover {
   transform: translateY(-4px);
+}
+
+.genesis-progress-text {
+  text-align: center;
+  color: #64748b;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .accordion-button::after {

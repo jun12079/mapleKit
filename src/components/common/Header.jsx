@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import destinyRitualFanIcon from "../../assets/images/Destiny_Ritual_Fan_icon.png";
 
 const routes = [
-  { path: "/maintain-calculator", name: "創世武器" },
+  { path: "/genesis-weapon", name: "創世武器" },
   { path: "/destiny-weapon", name: "命運武器" },
 ];
 

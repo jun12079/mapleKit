@@ -186,6 +186,7 @@ body {
     &.completed {
       background: #ecfdf5;
       border-left: 4px solid $success;
+      padding-left: 0.75rem;
     }
   }
 }
