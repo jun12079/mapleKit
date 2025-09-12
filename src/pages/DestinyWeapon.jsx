@@ -152,9 +152,9 @@ export default function Calculator() {
                   <label htmlFor="startDate" className="form-label fw-bold mb-2">開始日期</label>
                   <input type="date" className="form-control" id="startDate" value={startDate} onChange={(e) => setStartDate(e.target.value)} />
                 </div>
-                {/* 目前能量 */}
+                {/* 目前決心 */}
                 <div className="form-group mb-2">
-                  <label htmlFor="startEnergy" className="form-label fw-bold mb-2">目前能量</label>
+                  <label htmlFor="startEnergy" className="form-label fw-bold mb-2">目前決心</label>
                   <input type="number" className="form-control" id="startEnergy" value={startEnergy} min="0" max="7500" onChange={(e) => setStartEnergy(Number(e.target.value))} />
                 </div>
                 {/* BOSS選單 */}
@@ -167,7 +167,7 @@ export default function Calculator() {
                           <th className="col-md-3">BOSS</th>
                           <th className="col-md-2">難度</th>
                           <th className="col-md-2">人數</th>
-                          <th className="col-md-3">能量</th>
+                          <th className="col-md-3">決心</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -221,9 +221,9 @@ export default function Calculator() {
                     </table>
                   </div>
                 </form>
-                {/* 每週能量 */}
+                {/* 每週決心 */}
                 <div className="total-energy">
-                  每週總能量：{totalWeekEnergy.toLocaleString()}
+                  每週總決心：{totalWeekEnergy.toLocaleString()}
                 </div>
               </div>
             </div>
@@ -246,7 +246,7 @@ export default function Calculator() {
 
                       if (weeks > 0 && !isCompleted) {
                         const date = new Date(startDate);
-                        date.setDate(date.getDate() + weeks * 7);
+                        date.setDate(date.getDate() + (weeks - 1) * 7);
                         finishDate = date.toLocaleDateString('zh-TW');
                       } else if (isCompleted) {
                         finishDate = '已完成';
@@ -259,7 +259,7 @@ export default function Calculator() {
                         >
                           <div className="stage-left">
                             <div className="stage-title fw-bold">第{i + 1}階段</div>
-                            <div className="stage-requirement">所需能量：{stage} </div>
+                            <div className="stage-requirement">累積決心：{stage} </div>
                           </div>
                           <div className="stage-right text-primary text-end">
                             <div>完成日期：{finishDate}</div>
@@ -322,11 +322,11 @@ export default function Calculator() {
                   <div className="progress-stats">
                     <div className="stat-card">
                       <div className="stat-value">{startEnergy.toLocaleString()}</div>
-                      <div className="stat-label">目前能量</div>
+                      <div className="stat-label">目前決心</div>
                     </div>
                     <div className="stat-card">
                       <div className="stat-value">{totalWeekEnergy.toLocaleString()}</div>
-                      <div className="stat-label">每週能量</div>
+                      <div className="stat-label">每週決心</div>
                     </div>
                     <div className="stat-card">
                       <div className="stat-value">{startEnergy >= 7500 ? 0 : Math.ceil((stageCumulative[2] - startEnergy) / (totalWeekEnergy || 1))}</div>
