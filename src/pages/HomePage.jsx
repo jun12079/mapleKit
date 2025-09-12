@@ -17,7 +17,7 @@ export default function Homepage() {
             to="/destiny-weapon"
             icon={destinyRitualFanIcon}
             title="命運武器進度"
-            description="計算各階段所需能量、完成時間與週數"
+            description="計算各階段所需決心、完成時間與週數"
           />
         </div>
         <div className="col-md-6 col-lg-4">
@@ -25,7 +25,7 @@ export default function Homepage() {
             to="/genesis-weapon"
             icon={genesisRitualFanIcon}
             title="創世武器進度"
-            description="計算各階段所需能量、完成時間與週數"
+            description="計算各階段所需痕跡、完成時間與週數"
           />
         </div>
       </div>
