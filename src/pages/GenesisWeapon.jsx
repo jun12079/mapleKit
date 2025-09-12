@@ -131,7 +131,6 @@ export default function GenesisWeapon() {
     verusHilla: { players: 1, difficulty: "hard", origin: "verusHilla", enabled: true, reset: false },
     blackMage: { players: 1, difficulty: "hard", origin: "blackMage", enabled: true, reset: false }
   });
-  // const [showMonthlyModal, setShowMonthlyModal] = useState(false);
   const [isBossResetModalOpen, setIsBossResetModalOpen] = useState(false);
 
   const handleOpenBossResetModal = () => {
@@ -182,7 +181,7 @@ export default function GenesisWeapon() {
     return { weeklyTotal, monthlyTotal };
   };
 
-  // 2. 判斷兩個日期是否在同一個月
+  // 判斷兩個日期是否在同一個月
   const isSameMonth = (date1, date2) => {
     return date1.getFullYear() === date2.getFullYear() &&
       date1.getMonth() === date2.getMonth();
@@ -232,7 +231,6 @@ export default function GenesisWeapon() {
     });
   }
 
-  // const totalWeekEnergy = calculateTotalWeekEnergy();
   const { weeklyTotal, monthlyTotal } = calculateWeeklyAndMonthlyEnergy();
   const stageProgressData = calculateStageProgress(weeklyTotal, monthlyTotal, startEnergy, startDate);
   const percentage = Math.min((startEnergy / stageCumulative[7]) * 100, 100).toFixed(1);
@@ -506,41 +504,6 @@ export default function GenesisWeapon() {
           </div>
         </div >
       </div >
-      {/* Modal */}
-      {/* {showMonthlyModal && (
-        <div
-          className="modal fade show d-block"
-          style={{ background: "rgba(0,0,0,0.5)" }}
-          tabIndex="-1"
-        >
-          <div className="modal-dialog modal-dialog-centered">
-            <div className="modal-content rounded-3 shadow">
-              <div className="modal-header">
-                <h5 className="modal-title">月重置券說明</h5>
-                <button
-                  type="button"
-                  className="btn-close"
-                  onClick={() => setShowMonthlyModal(false)}
-                ></button>
-              </div>
-              <div className="modal-body">
-                <p>
-                  這是 <b>每月 BOSS 次數重置券</b>，可用來額外挑戰特定 BOSS。
-                  <br />（你可以在這裡放更多細節或規則說明）
-                </p>
-              </div>
-              <div className="modal-footer">
-                <button
-                  className="btn btn-secondary"
-                  onClick={() => setShowMonthlyModal(false)}
-                >
-                  關閉
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )} */}
       <BossResetModal bossConfig={bossConfig} setBossConfig={setBossConfig} bossData={bossData} isBossResetModalOpen={isBossResetModalOpen} setIsBossResetModalOpen={setIsBossResetModalOpen} />
     </>
   );
