@@ -1,4 +1,4 @@
-import { createHashRouter } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 
 import FrontLayout from "../layouts/FrontLayout";
 import Homepage from "../pages/HomePage";
@@ -7,7 +7,7 @@ import DestinyWeapon from "../pages/DestinyWeapon";
 import NotFound from "../pages/NotFound";
 import FAQ from "../pages/FAQ";
 
-const router = createHashRouter([
+const router = createBrowserRouter([
   {
     path: '/',
     element: <FrontLayout />,
