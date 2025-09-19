@@ -14,7 +14,7 @@ export default function Homepage() {
       <div className="row justify-content-center mb-5">
         <div className="col-md-6 col-lg-4">
           <CardLink
-            to="/destiny-weapon"
+            to="/calc/destiny-weapon"
             icon={destinyRitualFanIcon}
             title="命運武器進度"
             description="計算各階段所需決心、完成時間與週數"
@@ -22,7 +22,7 @@ export default function Homepage() {
         </div>
         <div className="col-md-6 col-lg-4">
           <CardLink
-            to="/genesis-weapon"
+            to="/calc/genesis-weapon"
             icon={genesisRitualFanIcon}
             title="創世武器進度"
             description="計算各階段所需痕跡、完成時間與週數"

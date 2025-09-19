@@ -4,34 +4,49 @@ import FrontLayout from "../layouts/FrontLayout";
 import Homepage from "../pages/HomePage";
 import GenesisWeapon from "../pages/GenesisWeapon";
 import DestinyWeapon from "../pages/DestinyWeapon";
-import NotFound from "../pages/NotFound";
+import Symbols from "../pages/Symbols";
 import FAQ from "../pages/FAQ";
+import NotFound from "../pages/NotFound";
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <FrontLayout />,
     children: [
       {
-        path: '',
+        path: "",
         element: <Homepage />,
       },
       {
-        path: 'genesis-weapon',
-        element: <GenesisWeapon />,
+        path: "calc",
+        children: [
+          {
+            path: "genesis-weapon",
+            element: <GenesisWeapon />,
+          },
+          {
+            path: "destiny-weapon",
+            element: <DestinyWeapon />,
+          },
+        ],
       },
       {
-        path: 'destiny-weapon',
-        element: <DestinyWeapon />,
+        path: "data",
+        children: [
+          {
+            path: "symbols",
+            element: <Symbols />,
+          },
+        ],
       },
       {
-        path: 'faq',
+        path: "faq",
         element: <FAQ />,
       }
     ]
   },
   {
-    path: '*',
+    path: "*",
     element: <NotFound />,
   }
 ]);
