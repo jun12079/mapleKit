@@ -1,9 +1,13 @@
 import { NavLink } from "react-router-dom";
 import destinyRitualFanIcon from "../../assets/images/Destiny_Ritual_Fan_icon.png";
 
-const routes = [
-  { path: "/genesis-weapon", name: "創世武器" },
-  { path: "/destiny-weapon", name: "命運武器" },
+const calcRoutes = [
+  { path: "/calc/genesis-weapon", name: "創世武器" },
+  { path: "/calc/destiny-weapon", name: "命運武器" },
+];
+
+const dataRoutes = [
+  { path: "/data/symbols", name: "符文系統" },
 ];
 
 export default function Header() {
@@ -45,7 +49,29 @@ export default function Header() {
                 </a>
                 <ul className="dropdown-menu">
                   {
-                    routes.map((route) => (
+                    calcRoutes.map((route) => (
+                      <li key={route.path}>
+                        <NavLink className="dropdown-item dropdown-item-animated" to={route.path}>
+                          {route.name}
+                        </NavLink>
+                      </li>
+                    ))
+                  }
+                </ul>
+              </li>
+              <li className="nav-item dropdown">
+                <a
+                  className="nav-link dropdown-toggle nav-link-animated"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                >
+                  資料
+                </a>
+                <ul className="dropdown-menu">
+                  {
+                    dataRoutes.map((route) => (
                       <li key={route.path}>
                         <NavLink className="dropdown-item dropdown-item-animated" to={route.path}>
                           {route.name}
