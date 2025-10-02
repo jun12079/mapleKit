@@ -286,7 +286,7 @@ export default function Calculator() {
 
                         if (weeks > 0 && !isCompleted) {
                           const date = new Date(startDate);
-                          date.setDate(date.getDate() + weeks * 7);
+                          date.setDate(date.getDate() + (weeks - 1) * 7);
                           finishDate = date.toLocaleDateString('zh-TW');
                         } else if (isCompleted) {
                           finishDate = '已完成';
