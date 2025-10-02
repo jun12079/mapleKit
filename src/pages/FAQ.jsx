@@ -16,6 +16,25 @@ const faqData = [
     id: "collapse3",
     question: "為什麼只有命運武器進度工具？",
     answer: "最初是為了給台版即將開放的命運武器而製作的，之後有想到什麼功能會再陸續加入。"
+  },
+  {
+    id: "collapse4",
+    question: "如何回報網站問題或建議？",
+    answer: (
+      <span>
+        如果發現網站有任何問題，歡迎透過{' '}
+        <a 
+          href="https://forms.gle/TfA1kbPJmsorU9wv6" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-primary fw-semibold"
+          style={{ textDecoration: 'underline' }}
+        >
+          回報表單
+        </a>{' '}
+        提供建議。
+      </span>
+    )
   }
 ];
 
@@ -79,7 +98,7 @@ export default function FAQ() {
                     }}
                   >
                     <div className="accordion-body bg-light px-4 py-4 border-top border-light">
-                      <p className="mb-0 text-dark-emphasis lh-lg">{item.answer}</p>
+                      <div className="mb-0 text-dark-emphasis lh-lg">{item.answer}</div>
                     </div>
                   </div>
                 </div>
