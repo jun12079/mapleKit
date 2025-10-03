@@ -1,9 +1,0 @@
-// 隱藏accordion-button 右側的箭頭
-.accordion-button::after {
-  display: none;
-}
-
-.accordion-button:hover {
-  background-color: #f8f9fa !important;
-  transform: translateY(-1px);
-}
